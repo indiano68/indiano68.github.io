@@ -16,7 +16,14 @@
             <li><a href="#">Contact</a></li> -->
         </ul>
     </nav>
-    
+    <script>
+        // Generate a random number between 1 and 100
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
+        
+        // Set the random number as the header text
+        var header = document.querySelector('header h1');
+        header.textContent = randomNumber;
+    </script>
     <main>
         <h2>About Me</h2>
         <p>David sucks at programming.</p>
