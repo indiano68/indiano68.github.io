@@ -63,10 +63,12 @@
     </nav>
     <script>
         var randomNumber = Math.floor(Math.random() * 100) + 1;
-        var header = document.querySelector('header h1');
-        header.textContent = randomNumber;
+        var main = document.querySelector('main');
+        var subheader = document.createElement('h2');
+        subheader.textContent = "Random Number: " + randomNumber;
+        main.insertBefore(subheader, main.firstChild);
     </script>
-    <main>
+    </script>
         <h2>About Me</h2>
         <p>David sucks at programming.</p>
         
