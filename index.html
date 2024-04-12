@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Personal Website</title>
+    <title>indiano68/home</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
             margin: 0;
             padding: 0;
         }
-        
+
         header {
             background-color: #333;
             color: #fff;
             padding: 20px;
             text-align: center;
         }
-        
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #555;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            background-color: #f1f1f1;
-            overflow: hidden;
         }
-        
+
         nav ul li {
-            float: left;
+            display: inline-block;
+            margin-right: 10px;
         }
-        
+
         nav ul li a {
-            display: block;
-            color: #333;
-            text-align: center;
-            padding: 14px 16px;
+            color: #fff;
             text-decoration: none;
         }
-        
+
         main {
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         footer {
             background-color: #333;
             color: #fff;
@@ -49,42 +61,74 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Erik's Personal page</h1>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="https://indiano68.github.io/projects.html">Home</a></li>
-            <!-- <li><a href="#">About</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li> -->
-        </ul>
-    </nav>
-    <script>
-        var randomNumber = Math.floor(Math.random() * 100) + 1;
-        var main = document.querySelector('main');
-        var subheader = document.createElement('h2');
-        subheader.textContent = "Random Number: " + randomNumber;
-        main.insertBefore(subheader, main.firstChild);
-    </script>
-    </script>
-        <h2>About Me</h2>
-        <p>David sucks at programming.</p>
-        
-        <h2>My Projects</h2>
-        <ul>
-            <li>Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-        </ul>
-        
-        <h2>Contact Me</h2>
-        <p>Include your contact information here.</p>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 My Personal Website. All rights reserved.</p>
-    </footer>
+
+<header>
+    <h1 style="color: #12e046; font-family: 'VT323', monospace;">
+        <span id="tp0">$ </span><span id="tp1"></span><span id="tp2">_</span>
+    </h1>
+</header>
+<script>
+    var text = "whoami? ";
+    var index = 0;
+    var ct = 0;
+    var bool = 0;
+    var typingSpan0 = document.getElementById("tp0");
+    var typingSpan1 = document.getElementById("tp1");
+    var typingSpan2 = document.getElementById("tp2");
+
+    function typeText() {
+        if (index < text.length) {
+            typingSpan1.textContent += text[index];
+            index++;
+            setTimeout(typeText, 200);
+        }
+        else {
+            if (ct>3 && bool==0) {
+                bool = 1;
+                ct = 0;
+                untypeText();
+            }
+            else if (bool==0) {
+                ct++;
+                setTimeout(typeText, 200);
+            }
+
+        }
+    }
+    function untypeText() {
+        if (ct < text.length) {
+            typingSpan1.textContent = typingSpan1.textContent.slice(0, -1);
+            ct++;
+            setTimeout(untypeText, 200);
+        }
+        else
+        {
+            text = "indiano68";
+            index = 0;
+            typeText();
+        }
+    }
+    typeText();
+
+    setInterval(function() {
+        var typingSpan = document.getElementById("tp2");
+        typingSpan.style.visibility = (typingSpan.style.visibility === "hidden") ? "visible" : "hidden";
+    }, 500);
+
+</script>
+<nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Awards</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Welcome to my website!</h2>
+    <p>This is some dummy content. Feel free to replace it with your own content.</p>
+</main>
+<footer>
+    <p>© 2024 indiano68</p>
+</footer>
 </body>
 </html>
